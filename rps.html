@@ -89,16 +89,7 @@
         function getPlayerInput(){
             let playerInput = prompt("What do you play?")
             let cleanedInput = playerInput.toLowerCase()
-            switch (cleanedInput){
-                case "rock":
-                    return "rock"
-                case "paper":
-                    return "paper"
-                case "scissors":
-                    return "scissors"
-                default:
-                    return cleanedInput
-            }
+            return cleanedInput
         }
         function getRandom(num){
             let randomNumber = Math.floor(Math.random()*num)
