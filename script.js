@@ -12,6 +12,9 @@ function initialize(){
     playerChoiceBox.textContent = "";
     computerChoiceBox.textContent = "";
     gameResultBox.textContent = "";
+    roundResultBox.textContent = "";
+    playerScoreBox.textContent = "";
+    computerScoreBox.textContent = "";
 
 }
 //Randomly plays a move
@@ -29,6 +32,8 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection){
     playerChoiceBox.textContent = `You threw: ${playerSelection}`;
     computerChoiceBox.textContent = `The computer threw: ${computerSelection}`;
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
     if (playerSelection === "rock"){
         if (computerSelection === "rock"){
             roundsCompleted++;

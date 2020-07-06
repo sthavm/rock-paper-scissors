@@ -2,6 +2,61 @@ body {
     background-color: #fafafa;
 }
 
+#header {
+    width: 100%;
+    height: 50px;
+    padding: 20px 0px 30px 0;
+    font-family: arial, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    background-color: #144549d8;
+    color: #FAFAFA;
+    font-size: 20px;
+}
+#controls {
+    display: inline-block;
+    padding: 10px 0px 0px 10em;
+}
+
+.control-buttons {
+    height: 150px;
+    width: 150px;
+    margin: 20px 0 0 0;
+    border: none;
+    transition: 0.3s;
+}
+.control-buttons:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+.control-buttons:disabled {
+    opacity: 0.3;
+}
+#rock {
+    background-image: url('rock.jpg');
+    background-size: 150px 150px;
+}
+#paper {
+    background-image: url(paper.jpg);
+    background-size: 150px 150px;
+}
+#scissors {
+    background-image: url(scissors.jpg);
+    background-size: 150px 150px;
+}
+#reset {
+    margin-top: 100px;
+    height: 40px;
+    background-color: #269473bb;
+    opacity: 0.95;
+}
+#reset:hover {
+    opacity: 1;
+}
+#game-tile {
+    display: inline-block;
+    margin-left: 200px;
+}
 li {
     list-style-type: none;
 }
