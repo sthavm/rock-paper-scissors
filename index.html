@@ -2,98 +2,31 @@
 <head>
     <title>Rock-Paper-Scissors</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        function computerPlay(){
-            let roll = getRandom(3)
-            switch (roll) {
-                case 0:
-                    return "rock"
-                case 1:
-                    return "paper"
-                case 2:
-                    return "scissors"
-            }
-        }
-        function playRound(playerSelection, computerSelection){
-            if (playerSelection === "rock"){
-                if (computerSelection === "rock"){
-                    return "Nobody wins."
-                } else if (computerSelection === "paper"){
-                    return "You lose! Paper beats rock."
-                } else {
-                    return "You win! Rock beats scissors."
-                }
-            } else if (playerSelection === "paper"){
-                if (computerSelection === "rock"){
-                    return "You win! Paper beats rock."
-                } else if (computerSelection === "paper"){
-                    return "Nobody wins."
-                } else {
-                    return "You lose! Scissors beats paper."
-                }
-            } else if (playerSelection === "scissors"){
-                if (computerSelection === "rock"){
-                    return "You lose! Rock beats scissors."
-                } else if (computerSelection === "paper"){
-                    return "You win! Scissors beats paper."
-                } else {
-                    return "Nobody wins."
-                }
-            }
-        }
-        function game(){
-            let playerScore = 0;
-            let computerScore = 0;
-            let playerInput;
-            let result;
-            let logMessage;
-            let winnerMessage;
-            for (i = 0; i < 5; i++){
-                playerInput = getPlayerInput()
-                while (!(isValidInput(playerInput))){
-                    alert("Invalid input! Type 'rock', 'paper', or 'scissors'")
-                    playerInput = getPlayerInput()
-                }
-                computerInput = computerPlay()
-                result = playRound(playerInput, computerInput)
-                if (result.search("You win") >= 0){
-                    playerScore++
-                } else if (result.search("You lose") >= 0){
-                    computerScore++
-                }
-                logMessage = `You threw ${playerInput} and the computer threw ${computerInput}.\n`
-                console.log(logMessage + result + ` The current score is ${playerScore}:${computerScore}.`)
-            }
-            if (playerScore === computerScore){
-                winnerMessage = "It was a draw"
-            } else if (playerScore > computerScore){
-                winnerMessage = "You won!"
-            } else {
-                winnerMessage = "You lost :("
-            }
-            console.log(`Game finished! The final score is ${playerScore}:${computerScore}. ${winnerMessage}`)
-
-        }
-        function isValidInput(str){
-            switch (str){
-                case "rock":
-                case "paper":
-                case "scissors":
-                    return true;
-                default:
-                    return false;
-            }
-        }
-        function getPlayerInput(){
-            let playerInput = prompt("What do you play?")
-            let cleanedInput = playerInput.toLowerCase()
-            return cleanedInput
-        }
-        function getRandom(num){
-            let randomNumber = Math.floor(Math.random()*num)
-            return randomNumber
-        }
-    </script>
+    <div id="header">
+        <h1>Rock-Paper-Scissors</h1>
+    </div>
+    <div id="main">
+        <div id="controls">
+            <ul>
+                <li><button class="control-buttons" id="rock">Rock</button></li>
+                <li><button class="control-buttons" id="paper">Paper</button></li>
+                <li><button class="control-buttons" id="scissors">Scissors</button></li>
+                <li><button class="control-buttons" id="reset">Reset</button></li>
+            </ul>
+        </div>
+        <div id="player-choice" class="choices"></div>
+        <div id="result">
+            <div id="scores">
+                <div id="player-score"></div>
+                <div id="computer-score"></div>
+            </div>
+            <div id="round-result"></div>
+            <div id="game-result"></div>
+        </div>
+        <div id="computer-choice" class="choices"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
