@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection === "rock"){
         if (computerSelection === "rock"){
             roundsCompleted++;
-            roundResultBox.textContent = "Nobody wins.";
+            roundResultBox.textContent = "Nobody wins this round.";
         } else if (computerSelection === "paper"){
             computerScore++;
             roundsCompleted++;
@@ -54,7 +54,7 @@ function playRound(playerSelection, computerSelection){
             roundResultBox.textContent = "You win! Paper beats rock.";
         } else if (computerSelection === "paper"){
             roundsCompleted++;
-            roundResultBox.textContent = "Nobody wins.";
+            roundResultBox.textContent = "Nobody wins this round.";
         } else {
             computerScore++;
             roundsCompleted++;
@@ -71,7 +71,7 @@ function playRound(playerSelection, computerSelection){
             roundResultBox.textContent = "You win! Scissors beats paper.";
         } else {
             roundsCompleted++;
-            roundResultBox.textContent = "Nobody wins.";
+            roundResultBox.textContent = "Nobody wins this round.";
         }
     }
 }
